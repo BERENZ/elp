@@ -198,15 +198,14 @@ Oficjalnym portalem zawierającym dodatkowe pakiety Julia jest [CRAN](https://cr
 Obecnie Julia pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.
 * Julia jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://juliacomputing.com/case-studies/].
 
+<!--nie wiem czy to prawda 
 Oczywiście, uniwersalny i idealny język nie istnieje:
-
-<!--nie wiem czy to prawda -->
-
 * Podobnie jak wiele innych języków, również R zawiera wiele niekonsekwencji, wynikających z wieloletniej ewolucji tego języka.
 W efekcie istnieje wiele specjalnych przypadków czy wyjątków, które warto znać [@burns2012r].
+-->
 
-Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R. 
-W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
+Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka Julia. 
+W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę Julia.
 Istnieje także wiele wprowadzających materiałów do nauki innych języków.
 Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z istniejących książek (@gries2017practical oraz @guzdial2016introduction), czy też kursów [Software Carpentry](http://swcarpentry.github.io/python-novice-inflammation/) oraz [Python Course](https://www.python-course.eu/python3_course.php). 
 W pracy programistycznej przydaje się również często znajomość linii komend.
