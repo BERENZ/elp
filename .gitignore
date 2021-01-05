@@ -1,5 +1,6 @@
 .Rproj.user
 .Rhistory
 .RData
+.vscode
 _book
 _bookdown_files
