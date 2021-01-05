@@ -1,9 +1,9 @@
 --- 
 title: "Elementarz programisty"
-subtitle: "Wstęp do programowania używając R"
-author: "Jakub Nowosad"
+subtitle: "Wstęp do programowania używając Julia"
+author: "Maciej Beręsewicz, Jakub Nowosad"
 # date: "`r Sys.Date()`"
-description: "Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R."
+description: "Wstęp do programowania używając Julia. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka Julia."
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: scrbook
@@ -14,11 +14,11 @@ monofontoptions: "Scale=0.66"
 bibliography: [references.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: nowosad/elp
+github-repo: BERENZ/elp-julia
 graphics: yes
 links-as-notes: true
 cover-image: "/cover/cover.png"
-url: 'https\://nowosad.github.io/elp'
+#url: 'https\://nowosad.github.io/elp'
 robots: "all,follow"
 googlebot: "index,follow,snippet,archive"
 ---
@@ -32,19 +32,19 @@ is_html = knitr::is_html_output()
 
 <a href="http://nowosad.github.io/elp/"><img src="cover/cover_lr.png" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" /></a> 
 
-**Elementarz programisty: Wstęp do programowania używając R** ma na celu wprowadzenie do podstaw działania w języku R. 
-W pierwszej części, "Podstawy", opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
+**Elementarz programisty: Wstęp do programowania używając Julia** ma na celu wprowadzenie do podstaw działania w języku Julia. 
+W pierwszej części, "Podstawy", opisuje ona w jaki sposób wykonywać proste operacje w Julia, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
 Ta część zawiera także omówienie podstawowych narzędzi pozwalających na sterowanie przepływem informacji, takich jak wyrażenia warunkowe i pętle, metod działania na tekście, oraz sposobów wczytywania i zapisywania plików w różnych formatach.
 Druga część, "Narzędzia", buduje na wiedzy zdobytej w części pierwszej i rozszerza ją.
 Zawiera ona informacje na temat tworzenia funkcji przyjaznych użytkownikom oraz to w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 W tej części następuje prezentacja metod analizy kodu, takich jak testy jednostkowe, benchmarking i profiling oraz sposobów rozwiązywania problemów z kodem używając technik debugowania.
-Pokazanie są także możliwości łączenia R z innymi językami programowania C++ i Python.
-Oprócz informacji ściśle powiązanych z R, **Elementarz programisty** ma także rozdział poświęcony systemom kontroli wersji - uniwersalnym narzędziom używanym przez programistów różnych języków.
-Część "Narzędzia" kończy rozdział integrujący wiedzę z całej książki w postaci omówienia kolejnych kroków dotyczących tworzenia pakietów R.
+Pokazanie są także możliwości łączenia Julia z innymi językami programowania R, C++ i Python.
+Oprócz informacji ściśle powiązanych z Julia, **Elementarz programisty** ma także rozdział poświęcony systemom kontroli wersji - uniwersalnym narzędziom używanym przez programistów różnych języków.
+Część "Narzędzia" kończy rozdział integrujący wiedzę z całej książki w postaci omówienia kolejnych kroków dotyczących tworzenia pakietów Julia.
 **Elementarz programisty** zawiera też szereg praktycznych porad oraz wiele odnośników do dodatkowych materiałów, takich jak książki, blogi, kursy, czy strony internetowe.
 Wszystkie rozdziały w tej książce dodatkowo zawierają zadania, które pozwalają na sprawdzenie i utrwalenie wiedzy.
-Książka ta jest przeznaczona zarówno dla osób bez znajomości języków programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R.
-Uzyskana wiedza z tej książki daje podstawy do wykorzystywania R do różnorodnych celów, od analizy danych i opracowań statystycznych, poprzez tworzenie wykresów i wizualizacji, kończąc na aplikacjach specyficznych dla danej dziedziny.
+Książka ta jest przeznaczona zarówno dla osób bez znajomości języków programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka Julia.
+Uzyskana wiedza z tej książki daje podstawy do wykorzystywania Julia do różnorodnych celów, od analizy danych i opracowań statystycznych, poprzez tworzenie wykresów i wizualizacji, kończąc na aplikacjach specyficznych dla danej dziedziny.
 
 ```{r a, echo=FALSE, eval=FALSE}
 # automatically create a bib database for R packages
@@ -63,29 +63,30 @@ knitr::write_bib(c(.packages(),
                    "packages.bib")
 ```
 
-Aktualna wersja książki znajduje się pod adresem https://nowosad.github.io/elp/. 
+Aktualna wersja książki znajduje się pod adresem https://xxxxx. 
 Jeżeli używasz tej książki, zacytuj ją jako:
 
-- Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: https://nowosad.github.io/elp/. ISBN: 978-83-953296-1-9
+- Beręsewicz, M., Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając Julia. 
 
-Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie https://github.com/nowosad/elp/issues.
+Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie https://github.com/BERENZ/elp-julia/issues.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Ta książka jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencji Creative Commons Uznanie autorstwa - Użycie niekomercyjne - Bez utworów zależnych 4.0 Międzynarodowe</a>.
 
 ## Wymagania wstępne {-}
 
-Do odtworzenia przykładów oraz do wykonania zadań zawartych w tej książce konieczne jest posiadanie aktualnej wersji **R**. 
-Pod adresem https://cloud.r-project.org/ można znaleźć instrukcje instalacji R dla systemów Windows, Mac OS i Linux.
+Do odtworzenia przykładów oraz do wykonania zadań zawartych w tej książce konieczne jest posiadanie aktualnej wersji **Julia**. 
+Pod adresem https://julialang.org/ można znaleźć instrukcje instalacji Julia dla systemów Windows, Mac OS i Linux.
 
-W niektórych rozdziałach użyte zostanie zintegrowane środowisko programistyczne **RStudio**.
-Można je zainstalować korzystając ze strony https://www.rstudio.com/products/rstudio/download/#download.
+W niektórych rozdziałach użyte zostanie zintegrowane środowisko programistyczne **Visual Studio Code**.
+Można je zainstalować korzystając ze strony https://code.visualstudio.com/Download
+
 <!-- https://rstudio-education.github.io/hopr/starting.html -->
 <!--pakiety-->
 <!-- dane -->
 
 Aspekty dotyczące kontroli wersji zostaną omówione używając oprogramowania **Git**.
 Zalecanym sposobem instalacji Git na Windows jest wersja ze strony https://gitforwindows.org/.
-Instrukcja instalacji na system Mac OS znajduje się pod adresem https://happygitwithr.com/install-git.html#macos.
+Instrukcja instalacji na system Mac OS znajduje się pod adresem https://happygitwithr.com/install-git.html#macos.
 Wersję Linuxową można zainstalować używając poniższej linii kodu:
 
 ```
@@ -104,18 +105,18 @@ W całej książce stosowana jest konwencja, w której `fun()` oznacza funkcje, 
 Wszystkie pakiety użyte w tej książce oznaczane są pogrubioną czcionką - **pak**.
 
 Tekst na szarym tle przedstawia blok kodu.
-Może on zawierać komentarze (rozpoczynające się of znaku `#`), kod oraz wynik jego użycia (rozpoczynające się od znaków `#>`).
+Może on zawierać komentarze (rozpoczynające się of znaku `#`), kod oraz wynik jego użycia (rozpoczynające się od znaków `#julia>`).
 
-```{r, eval=FALSE}
+```{julia, eval=FALSE}
 # komentarz
 kod
 #> wynik użycia kodu
 ```
 
-Dodatkowo, ikona kompasu przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też wskazówki.
+Dodatkowo, ikona kompasu przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też wskazówki.
 
 ```{block2, type='rmdinfo'}
-Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia funkcji, czy też wskazówka.
+Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia funkcji, czy też wskazówka.
 ```
 
 ## Podziękowania {-}

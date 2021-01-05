@@ -5,10 +5,10 @@ BASE_REPO=$PWD
 update_website() {
   cd ..; mkdir gh-pages; cd gh-pages
   git init
-  git config user.name "jn"
-  git config user.email "tupiszakaczki@gmail.com"
+  git config user.name "maciej"
+  git config user.email "maciej.beresewicz@gmail.com"
   git config --global push.default simple
-  git remote add upstream "https://$GH_TOKEN@github.com/Nowosad/elp.git"
+  git remote add upstream "https://$GH_TOKEN@github.com/BERENZ/elp-julia.git"
   git fetch upstream 2>err.txt
   git checkout -f gh-pages
   
