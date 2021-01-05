@@ -1,6 +1,6 @@
 # (PART) Podstawy {-}
 
-# Start R {#ergosum}
+# Start Julia {#ergosum}
 
 Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się poprzez wpisanie polecenia w oknie konsoli (zwanej też terminalem) i jego uruchomienie^[To jest tzw. tryb interaktywny. 
 Istnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.].

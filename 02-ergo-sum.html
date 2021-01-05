@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<HTML lang = "en">
+<HEAD>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  
+<style>
+pre.hljl {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+    overflow-x: auto;
+    color: rgb(68,68,68); background-color: rgb(251,251,251); }
+pre.hljl > span.hljl-t { }
+pre.hljl > span.hljl-w { }
+pre.hljl > span.hljl-e { }
+pre.hljl > span.hljl-eB { }
+pre.hljl > span.hljl-o { }
+pre.hljl > span.hljl-k { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kc { color: rgb(59,151,46); font-style: italic; }
+pre.hljl > span.hljl-kd { color: rgb(214,102,97); font-style: italic; }
+pre.hljl > span.hljl-kn { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kp { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kr { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kt { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-n { }
+pre.hljl > span.hljl-na { }
+pre.hljl > span.hljl-nb { }
+pre.hljl > span.hljl-nbp { }
+pre.hljl > span.hljl-nc { }
+pre.hljl > span.hljl-ncB { }
+pre.hljl > span.hljl-nd { color: rgb(214,102,97); }
+pre.hljl > span.hljl-ne { }
+pre.hljl > span.hljl-neB { }
+pre.hljl > span.hljl-nf { color: rgb(66,102,213); }
+pre.hljl > span.hljl-nfm { color: rgb(66,102,213); }
+pre.hljl > span.hljl-np { }
+pre.hljl > span.hljl-nl { }
+pre.hljl > span.hljl-nn { }
+pre.hljl > span.hljl-no { }
+pre.hljl > span.hljl-nt { }
+pre.hljl > span.hljl-nv { }
+pre.hljl > span.hljl-nvc { }
+pre.hljl > span.hljl-nvg { }
+pre.hljl > span.hljl-nvi { }
+pre.hljl > span.hljl-nvm { }
+pre.hljl > span.hljl-l { }
+pre.hljl > span.hljl-ld { color: rgb(148,91,176); font-style: italic; }
+pre.hljl > span.hljl-s { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sa { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sb { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sc { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sd { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdC { color: rgb(201,61,57); }
+pre.hljl > span.hljl-se { color: rgb(59,151,46); }
+pre.hljl > span.hljl-sh { color: rgb(201,61,57); }
+pre.hljl > span.hljl-si { }
+pre.hljl > span.hljl-so { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sr { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ss { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ssB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-nB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nbB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nfB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nh { color: rgb(59,151,46); }
+pre.hljl > span.hljl-ni { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nil { color: rgb(59,151,46); }
+pre.hljl > span.hljl-noB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-oB { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-ow { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-p { }
+pre.hljl > span.hljl-c { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-ch { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cm { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cp { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cpB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cs { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-csB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-g { }
+pre.hljl > span.hljl-gd { }
+pre.hljl > span.hljl-ge { }
+pre.hljl > span.hljl-geB { }
+pre.hljl > span.hljl-gh { }
+pre.hljl > span.hljl-gi { }
+pre.hljl > span.hljl-go { }
+pre.hljl > span.hljl-gp { }
+pre.hljl > span.hljl-gs { }
+pre.hljl > span.hljl-gsB { }
+pre.hljl > span.hljl-gt { }
+</style>
+
+
+
+  <style type="text/css">
+  @font-face {
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+}
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  font-family: monospace, monospace;
+  font-size : 0.8em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+thead th {
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+tr:nth-child(odd){
+  background-color: rgb(248,248,248);
+}
+
+
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 3.6rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.4rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.2rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.8rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 2.4rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+p {
+  margin-top: 0; }
+a {
+  color: #1EAEDB; }
+a:hover {
+  color: #0FA0CE; }
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+ul {
+  list-style: circle; }
+ol {
+  list-style: decimal; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li > p {margin : 0;}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 1.0rem; }
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre.hljl {
+  margin: 0 0 10px;
+  display: block;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding : 5px;
+}
+
+pre.output {
+  background: #ffffff;
+}
+
+pre.code {
+  background: #ffffff;
+}
+
+pre.julia-error {
+  color : red
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+
+@media (min-width: 400px) {}
+@media (min-width: 550px) {}
+@media (min-width: 750px) {}
+@media (min-width: 1000px) {}
+@media (min-width: 1200px) {}
+
+h1.title {margin-top : 20px}
+img {max-width : 100%}
+div.title {text-align: center;}
+
+  </style>
+</HEAD>
+
+<BODY>
+  <div class ="container">
+    <div class = "row">
+      <div class = "col-md-12 twelve columns">
+        <div class="title">
+          
+          
+          
+        </div>
+
+        <h1>&#40;PART&#41; Podstawy &#123;-&#125;</h1>
+<h1>Start Julia &#123;#ergosum&#125;</h1>
+<p>Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się poprzez wpisanie polecenia w oknie konsoli &#40;zwanej też terminalem&#41; i jego uruchomienie^&#91;To jest tzw. tryb interaktywny.  Istnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.&#93;. Komendy są najpierw sprawdzanie pod kontekstem ich poprawności. Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nawiasy czy cudzysłowy zostały zamknięte. Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.</p>
+<h2>Wyrażenia</h2>
+<p>Podstawowe działania arytmetyczne, dodawanie, odejmowane, mnożenie i dzielenie, są również często używane w wielu językach programowania. Dla każdej z tych operacji istnieje odpowiedni operator w Julia. Operatorem dodawania jest <code>&#43;</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-ni'>2</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-t'>
+4</span>
+</pre>
+
+<p>Operatorem odejmowania jest <code>-</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-ni'>1</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+-2</span>
+</pre>
+
+<p>Operatorem mnożenia jest <code>*</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-ni'>5</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-ni'>5</span><span class='hljl-t'>
+25</span>
+</pre>
+
+<p>Operatorem dzielenia jest <code>/</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-ni'>42</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-ni'>5</span><span class='hljl-t'>
+8.4</span>
+</pre>
+
+<h2>Obiekty</h2>
+<h3>Operator przypisania</h3>
+<p>W poniższej linii stworzony jest nowy obiekt, o nazwie <code>x</code>, który zawiera wartość <code>7</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>7</span><span class='hljl-t'>
+7</span>
+</pre>
+
+<p>Można to sprawdzić wpisując nazwę tego obiektu.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>7</span><span class='hljl-p'>;</span><span class='hljl-t'>
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>x</span><span class='hljl-t'>
+7</span>
+</pre>
+
+<p>Operatory przypisania może również posłużyć do nadania wartości z jednego obiektu do drugiego. Poniżej nowy obiekt <code>y</code> przyjmuje wartość od obiektu <code>x</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'>
+7
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>y</span><span class='hljl-t'>
+7</span>
+</pre>
+
+<p>Język R przechowuje i przetwarza wszystkie obiekty w pamięci komputera &#40;RAM&#41;. Wpływa to na zwiększoną wydajność i elastyczność obliczeń, ale jednocześnie powoduje to ograniczenie wielkości obiektów na jakich można pracować. Istnieje równocześnie <a href="https://bookdown.org/rdpeng/RProgDA/working-with-large-datasets.html">szereg strategii</a> jak postępować z większymi zbiorami danych, które nie mieszczą się w RAMie &#91;@pengMasteringSoftwareDevelopment2017&#93;.</p>
+<h3>Działania na obiektach &#123;#dzialania-na-obiektach&#125;</h3>
+<p>Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów.  W poniższych czterech przypadkach obiekt <code>x</code> został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a jako wyniki tych obliczeń powstały nowe obiekty.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z1</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+10
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z2</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>5</span><span class='hljl-t'>
+2
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z3</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-t'>
+14
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z4</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-ni'>4</span><span class='hljl-t'>
+1.75</span>
+</pre>
+
+<div class="admonition note"><p class="admonition-title">Note</p><p>Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej typu i nazwy Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje. Przykładowo, jeżeli obiekt <code>x</code> zostanie zadeklarowany jako liczba całkowita &#40;integer&#41;, wynikiem dzielenia <code>x / 4</code> będzie <code>1</code> zamiast <code>1.75</code>.</p>
+</div>
+<p>Działania na obiektach mogą też się odbywać używając innych operatorów oraz różnorodnych funkcji. Przykładowo, operator zapisywany jako <code>&#37;</code> to modulo, którego celem jest określanie reszty z dzielenia.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z5</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>%</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+1</span>
+</pre>
+
+<p>Operator <code>÷</code> &#40;<code>\div</code> &#43; tab&#41; przedstawia dzielenie całkowite.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z6</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>÷</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+2</span>
+</pre>
+
+<p>Operator <code>^</code> natomiast wykonuje podniesienie wartości obiektu do wybranej potęgi.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z7</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-oB'>^</span><span class='hljl-ni'>2</span><span class='hljl-t'>
+49</span>
+</pre>
+
+<p>Odwrotnością potęgowania jest pierwiastkowanie.   W Julii nie istnieje do tego celu specjalny operator, ale zawiera on funkcję <code>sqrt&#40;&#41;</code> lub <code>\sqrt</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z8</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+2.6457513110645907
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z8</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-oB'>√</span><span class='hljl-n'>x</span><span class='hljl-t'>
+2.6457513110645907</span>
+</pre>
+
+<p>Często używaną funkcją w Julia jest też <code>&#91;&#93;</code>. Ta funkcja łączy krótsze wektory w dłuższe wektory.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>z9</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-n'>z2</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>z4</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>z8</span><span class='hljl-p'>]</span><span class='hljl-t'>
+3-element Array{Float64,1}:
+ 2.0
+ 1.75
+ 2.6457513110645907</span>
+</pre>
+
+<div class="admonition note"><p class="admonition-title">Note</p><p>Operatory użyte w tym rozdziale, np. <code>&#43;</code>, <code>*</code>, <code>^</code>, <code>&#37;&#37;</code> to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę. Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - &quot;<span class="math">$`$</span>&quot;, np. <code>2 &#43; 2</code> można też zapisać jako <code>&#96;&#43;&#96;&#40;2, 2&#41;</code>.</p>
+</div>
+<h2>IDE</h2>
+<p>Zintegrowane środowisko programistyczne &#40;ang. <em>Integrated Development Environment</em>, IDE&#41; to program ułatwiający pisanie kodu.  Zawiera on wiele użytecznych funkcjonalności, takich jak wbudowany edytor i konsola, podświetlanie składni, automatyczne uzupełnianie kodu, itd. Bez IDE kod musi być pisany w jednym programie, a następnie kopiowany i uruchamiany w innym.</p>
+<h2>Styl</h2>
+<p>Języki programowania pozwalają na napisanie dokładnie tego samego kodu na wiele sposobów. Przykładowo <code>z1 &#61; x &#43; 3</code> ma identyczne działanie jak <code>z1&#61;x&#43;3</code>. Styl pisania kodu obejmuje, między innymi, sposoby nazywania obiektów, stosowania odstępów czy wcięć, czy też pisania komentarzy. Przyjęcie wybranego stylu pozwala na ułatwienie czytania i zrozumienia kodu oraz zmniejszenie szans na powstawanie w nim błędów.</p>
+<p>Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu.  Więcej wskazówek można znaleźć na w <a href="https://style.tidyverse.org/">poradniku stylu RStudio</a> oraz <a href="https://google.github.io/styleguide/Rguide.xml">poradniku stylu Google</a>. Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady.  Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać. </p>
+<h2>Nazwy obiektów &#123;#nazwy-obiektow&#125;</h2>
+<p>Istnieje wiele konwencji nazywania obiektów^&#91;https://en.wikipedia.org/wiki/Naming<em>convention</em>&#40;programming&#41;&#93;.  Najczęściej używaną konwencją w R jest tzw. <a href="https://en.wikipedia.org/wiki/Snake_case">&quot;snake case&quot;</a>. Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia &#40;<code>_</code>&#41;.</p>
+
+<!--  obiekty rzeczowniki, funkcje czasowniki  -->
+
+<p>Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># obiekt</span><span class='hljl-t'>
+</span><span class='hljl-n'>bok_a</span><span class='hljl-t'>
+</span><span class='hljl-n'>bok_b</span><span class='hljl-t'>
+
+</span><span class='hljl-cs'># funkcja</span><span class='hljl-t'>
+</span><span class='hljl-n'>pole_prostokata</span>
+</pre>
+
+
+<p>Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. <code>^</code>, <code>&#33;</code>, <code>&#36;</code>, <code>@</code>, <code>&#43;</code>, <code>-</code>, <code>/</code>, czy <code>*</code>. Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji. Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. <code>c</code>, <code>t</code>, <code>table</code>, itd.</p>
+<h3>Odstępy</h3>
+<p>Odstępy pełnią bardzo ważną funkcję przy pisaniu kodu, podobnie jak odstępy przy pisaniu tekstu. Wyobraź sobie czytanie powieści, w której nie ma żadnych odstępów między słowami czy rozdziałami.</p>
+
+<!--  indentation python  -->
+
+<p>Często mówi się, że &quot;kod musi oddychać&quot; - odstępy zwiększają czytelność kodu i pozwalają na jego szybsze zrozumienie oraz ułatwiają naprawienie występujących błędów.</p>
+<p>Odstępy można uzyskać poprzez użycie spacji. Spacje powinny być użyte po przecinkach, ale nigdy przed nimi.  Dodatkowo, większość operatorów &#40;np. <code>&#61;</code>, <code>&#43;</code>, <code>-</code>, <code>&#61;&#61;</code>&#41; powinna być otoczona przez spacje.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Zalecane</span><span class='hljl-t'>
+</span><span class='hljl-n'>srednia</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>mean</span><span class='hljl-p'>(</span><span class='hljl-n'>wartosc</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-n'>pole</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>bok_a</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>bok_b</span><span class='hljl-t'>
+
+</span><span class='hljl-cs'># Niewskazane</span><span class='hljl-t'>
+</span><span class='hljl-n'>srednia</span><span class='hljl-oB'>=</span><span class='hljl-n'>mean</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-t'> </span><span class='hljl-n'>wartosc</span><span class='hljl-p'>)</span><span class='hljl-t'> 
+</span><span class='hljl-n'>pole</span><span class='hljl-oB'>=</span><span class='hljl-n'>bok_a</span><span class='hljl-oB'>*</span><span class='hljl-n'>bok_b</span>
+</pre>
+
+
+<p>Spacje należy również używać do tworzenia wcięć - każde z nich powinno się składać z dwóch spacji.</p>
+
+<!--  tab space war  -->
+
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Zalecane</span><span class='hljl-t'>
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>moja_funkcja</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>z</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>pod</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>z</span><span class='hljl-t'>
+    </span><span class='hljl-n'>wynik</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>pod</span><span class='hljl-t'>
+    </span><span class='hljl-n'>wynik</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-cs'># Niewskazane</span><span class='hljl-t'>
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>moja_funkcja</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>z</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-n'>pod</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>z</span><span class='hljl-t'>
+</span><span class='hljl-n'>wynik</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>pod</span><span class='hljl-t'>
+</span><span class='hljl-n'>wynik</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+<p>Warto także ograniczać długość każdej linii kodu, żeby nie przekraczała ona ok. 80 znaków. Dzięki temu możliwe jest szybkie przeczytanie kodu czy też jego wydrukowanie.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Zalecane</span><span class='hljl-t'>
+</span><span class='hljl-n'>bardzo_wazny_wynik</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>moja_bardzo_wazna_funkcja</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;pierwszy argument&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'>
+                                               </span><span class='hljl-n'>b</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;drugi argument&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> 
+                                               </span><span class='hljl-n'>c</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;trzeci argument&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+</span><span class='hljl-cs'># Niewskazane</span><span class='hljl-t'>
+</span><span class='hljl-n'>bardzo_wazny_wynik</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>moja_bardzo_wazna_funkcja</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;pierwszy argument&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;drugi argument&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;trzeci argument&quot;</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<h3>Komentarze</h3>
+<p>Komentarze służą do wyjaśniania istotnych elementów kodu. Do komentowania w języku Julia służy operator <code>#</code>.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Mój komentarz</span>
+</pre>
+
+
+<h3>Nazwy plików</h3>
+<p>Nazwy plików powinny spełniać trzy wymagania - być łatwe &#40;i&#41; do odczytania przez komputer, &#40;ii&#41; do odczytania przez człowieka, &#40;iii&#41; do posortowania.</p>
+<p>Nazwy plików nie powinny zawierać spacji, znaków specjalnych &#40;np. &#33;, &#37;, *&#41;, znaków diakrytycznych &#40;np. ć, Ł, ź&#41;. Warto też aby nazwy plików składały się tylko z małych liter.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Zalecane</span><span class='hljl-t'>
+</span><span class='hljl-n'>obliczanie</span><span class='hljl-oB'>-</span><span class='hljl-n'>sredniej</span><span class='hljl-oB'>.</span><span class='hljl-n'>R</span><span class='hljl-t'>
+</span><span class='hljl-n'>pomiary</span><span class='hljl-oB'>-</span><span class='hljl-n'>temperatury</span><span class='hljl-oB'>.</span><span class='hljl-n'>csv</span><span class='hljl-t'>
+
+</span><span class='hljl-cs'># Niewskazane</span><span class='hljl-t'>
+</span><span class='hljl-n'>Obliczanie</span><span class='hljl-t'> </span><span class='hljl-n'>Średniej</span><span class='hljl-oB'>.</span><span class='hljl-n'>R</span><span class='hljl-t'>
+</span><span class='hljl-n'>pomiaryTemperatury!</span><span class='hljl-oB'>.</span><span class='hljl-n'>csv</span>
+</pre>
+
+
+<p>Dodatkowo wskazane jest dodanie wartości numerycznych przed nazwą pliku, jeżeli pliki mają jakąś kolejność.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Zalecane</span><span class='hljl-t'>
+</span><span class='hljl-ni'>01</span><span class='hljl-n'>_przygotowanie</span><span class='hljl-oB'>-</span><span class='hljl-n'>danych</span><span class='hljl-oB'>.</span><span class='hljl-n'>jl</span><span class='hljl-t'>
+</span><span class='hljl-ni'>02</span><span class='hljl-n'>_obliczanie</span><span class='hljl-oB'>-</span><span class='hljl-n'>sredniej</span><span class='hljl-oB'>.</span><span class='hljl-n'>jl</span><span class='hljl-t'>
+
+</span><span class='hljl-cs'># Niewskazane</span><span class='hljl-t'>
+</span><span class='hljl-n'>przygotowanie</span><span class='hljl-oB'>-</span><span class='hljl-n'>danych</span><span class='hljl-oB'>.</span><span class='hljl-n'>jl</span><span class='hljl-t'>
+</span><span class='hljl-n'>obliczanie</span><span class='hljl-oB'>-</span><span class='hljl-n'>sredniej</span><span class='hljl-oB'>.</span><span class='hljl-n'>jl</span>
+</pre>
+
+
+<div class="admonition note"><p class="admonition-title">Note</p><p>Kodowanie znaków &#40;ang. <em>character encodings</em>&#41; jest to sposób sposób prezentacji znaków. Istnieje szereg różnych standardów kodowania znaków. Standard ASCII przyporządkowuje liczbom z zakresu 0-127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia. Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków.  Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 &#40;lub CP1250&#41;. Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich. W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z &quot;polskim&quot; kodowaniem znaków może spowodować pojawienie się tzw. &quot;krzaczków&quot;. Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków. Jest on obecnie zalecanym standardem na całym świecie.</p>
+</div>
+<h3>Daty</h3>
+<p>Istnieje wiele sposobów zapisu dat^&#91;https://xkcd.com/1179/&#93;, co może powodować różnorodne problemy przy programowaniu oraz analizie danych. Z ratunkiem w tej kwestii przychodzi norma <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, która definiuje daty kalendarzowe jako <em>YYYY-MM-DD</em>, czyli <em>ROK-MIESIĄC-DZIEŃ</em>.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Zalecane</span><span class='hljl-t'>
+</span><span class='hljl-ni'>2019</span><span class='hljl-oB'>-</span><span class='hljl-ni'>06</span><span class='hljl-oB'>-</span><span class='hljl-ni'>02</span><span class='hljl-t'>
+
+</span><span class='hljl-cs'># Niewskazane</span><span class='hljl-t'>
+</span><span class='hljl-n'>wszelkie</span><span class='hljl-t'> </span><span class='hljl-n'>inne</span>
+</pre>
+
+
+<h2>Dodatkowe materiały &#123;#resources&#125;</h2>
+<p>Polskie książki:</p>
+<p>Angielskie książki:</p>
+<p>Blogi:</p>
+<p>Kursy:</p>
+<p>Serwisy internetowe:</p>
+<p>Meetups &#40;spotkania początkujących i zaawansowanych użytkowników Julia&#41;:</p>
+<h2>Zadania &#123;#zad2&#125;</h2>
+<p>Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się stosować do stylu podanego w sekcji \@ref&#40;styl&#41;.</p>
+<ol>
+<li><p>Przejrzyj poniższą listę poleceń.</p>
+</li>
+</ol>
+<p>Spróbuj określić uzyskane wyniki bez wykonywania kodu w Julia.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>7</span><span class='hljl-t'>
+</span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-ni'>2</span><span class='hljl-t'>
+</span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+</span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>5</span><span class='hljl-t'>
+</span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-t'>
+</span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-ni'>4</span><span class='hljl-t'>
+</span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>%</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+</span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>÷</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+</span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>^</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-t'>
+</span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>^</span><span class='hljl-t'> </span><span class='hljl-n'>x</span>
+</pre>
+
+
+<ol start="2">
+<li><p>Jedziesz na krótkie wakacje i planujesz na nie zabrać 500 EUR.</p>
+</li>
+</ol>
+<p>Aktualny kurs kupna EUR wynosi 4,31. Ile PLN musisz wydać? Wylicz to w Julia.</p>
+<ol start="3">
+<li><p>Masz trapez o długości podstaw <code>a &#61; 5</code> i <code>b &#61; 6</code> oraz wysokości <code>h &#61; 3</code>.</p>
+</li>
+</ol>
+<p>Stwórz nowy obiekt <code>pole_trapezu</code>, który zawiera obliczone pole tego trapezu.</p>
+<ol start="4">
+<li><p>Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN. </p>
+</li>
+</ol>
+<p>Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN. Wylicz w Julia, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.</p>
+
+<!-- zadanie z poprawą stylu -->
+
+
+
+<ol start="5">
+<li><p>Przejrzyj linki zawarte w tym rozdziale, w szczególności Julia bloggers </p>
+</li>
+</ol>
+<p>Znajdź jeden lub dwa przykłady zastosowania Julia, które uważasz za ciekawe lub interesujące.</p>
+
+
+        <HR/>
+        <div class="footer">
+          <p>
+            Published from <a href="02-ergo-sum.jmd">02-ergo-sum.jmd</a>
+            using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.6 on 2021-01-05.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BODY>
+
+</HTML>

@@ -1,0 +1,356 @@
+---
+weave_options:
+  term: true
+---
+
+# (PART) Podstawy {-}
+
+# Start Julia {#ergosum}
+
+Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się poprzez wpisanie polecenia w oknie konsoli (zwanej też terminalem) i jego uruchomienie^[To jest tzw. tryb interaktywny. 
+Istnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.].
+Komendy są najpierw sprawdzanie pod kontekstem ich poprawności.
+Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nawiasy czy cudzysłowy zostały zamknięte.
+Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.
+
+## Wyrażenia
+
+Podstawowe działania arytmetyczne, dodawanie, odejmowane, mnożenie i dzielenie, są również często używane w wielu językach programowania.
+Dla każdej z tych operacji istnieje odpowiedni operator w Julia.
+Operatorem dodawania jest `+`.
+
+```julia
+2 + 2
+```
+
+Operatorem odejmowania jest `-`.
+
+```julia
+1 - 3
+```
+
+Operatorem mnożenia jest `*`.
+
+```julia
+5 * 5
+```
+
+Operatorem dzielenia jest `/`.
+
+```julia
+42 / 5
+```
+
+## Obiekty
+
+### Operator przypisania
+
+W poniższej linii stworzony jest nowy obiekt, o nazwie `x`, który zawiera wartość `7`.
+
+```julia
+x = 7
+```
+
+
+Można to sprawdzić wpisując nazwę tego obiektu.
+
+```julia
+x = 7;
+x
+```
+
+Operatory przypisania może również posłużyć do nadania wartości z jednego obiektu do drugiego.
+Poniżej nowy obiekt `y` przyjmuje wartość od obiektu `x`.
+
+```julia
+y = x
+y
+```
+
+Język R przechowuje i przetwarza wszystkie obiekty w pamięci komputera (RAM).
+Wpływa to na zwiększoną wydajność i elastyczność obliczeń, ale jednocześnie powoduje to ograniczenie wielkości obiektów na jakich można pracować.
+Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/working-with-large-datasets.html) jak postępować z większymi zbiorami danych, które nie mieszczą się w RAMie [@pengMasteringSoftwareDevelopment2017].
+
+
+### Działania na obiektach {#dzialania-na-obiektach}
+
+Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów. 
+W poniższych czterech przypadkach obiekt `x` został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a jako wyniki tych obliczeń powstały nowe obiekty.
+
+```julia
+z1 = x + 3
+z2 = x - 5
+z3 = x * 2
+z4 = x / 4
+```
+
+!!! note
+    Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej typu i nazwy Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje. Przykładowo, jeżeli obiekt `x` zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia `x / 4` będzie `1` zamiast `1.75`.
+
+Działania na obiektach mogą też się odbywać używając innych operatorów oraz różnorodnych funkcji.
+Przykładowo, operator zapisywany jako `%` to modulo, którego celem jest określanie reszty z dzielenia.
+
+```julia
+z5 = x % 3
+```
+Operator `÷` (`\div` + tab) przedstawia dzielenie całkowite.
+
+```julia
+z6 = x ÷ 3
+```
+Operator `^` natomiast wykonuje podniesienie wartości obiektu do wybranej potęgi.
+
+```julia
+z7 = x^2
+```
+
+Odwrotnością potęgowania jest pierwiastkowanie.  
+W Julii nie istnieje do tego celu specjalny operator, ale zawiera on funkcję `sqrt()` lub `\sqrt`.
+
+```julia
+z8 = sqrt(x)
+z8 = √x
+```
+
+Często używaną funkcją w Julia jest też `[]`.
+Ta funkcja łączy krótsze wektory w dłuższe wektory.
+
+```julia
+z9 = [z2, z4, z8]
+```
+
+!!! note
+    Operatory użyte w tym rozdziale, np. `+`, `*`, `^`, `%%` to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
+    Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "`` ` ``", np. `2 + 2` można też zapisać jako ``` `+`(2, 2)```.
+
+
+## IDE
+
+Zintegrowane środowisko programistyczne (ang. *Integrated Development Environment*, IDE) to program ułatwiający pisanie kodu. 
+Zawiera on wiele użytecznych funkcjonalności, takich jak wbudowany edytor i konsola, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
+Bez IDE kod musi być pisany w jednym programie, a następnie kopiowany i uruchamiany w innym.
+
+
+## Styl
+
+Języki programowania pozwalają na napisanie dokładnie tego samego kodu na wiele sposobów.
+Przykładowo `z1 = x + 3` ma identyczne działanie jak `z1=x+3`.
+Styl pisania kodu obejmuje, między innymi, sposoby nazywania obiektów, stosowania odstępów czy wcięć, czy też pisania komentarzy.
+Przyjęcie wybranego stylu pozwala na ułatwienie czytania i zrozumienia kodu oraz zmniejszenie szans na powstawanie w nim błędów.
+
+
+Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu. 
+Więcej wskazówek można znaleźć na w [poradniku stylu RStudio](https://style.tidyverse.org/) oraz [poradniku stylu Google](https://google.github.io/styleguide/Rguide.xml).
+Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady. 
+Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać. 
+
+## Nazwy obiektów {#nazwy-obiektow}
+
+Istnieje wiele konwencji nazywania obiektów^[https://en.wikipedia.org/wiki/Naming_convention_(programming)]. 
+Najczęściej używaną konwencją w R jest tzw. ["snake case"](https://en.wikipedia.org/wiki/Snake_case).
+Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (`_`).
+<!-- obiekty rzeczowniki, funkcje czasowniki -->
+Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.
+
+```julia, eval=false
+# obiekt
+bok_a
+bok_b
+
+# funkcja
+pole_prostokata
+```
+
+Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. `^`, `!`, `$`, `@`, `+`, `-`, `/`, czy `*`.
+Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
+Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. `c`, `t`, `table`, itd.
+
+### Odstępy
+
+Odstępy pełnią bardzo ważną funkcję przy pisaniu kodu, podobnie jak odstępy przy pisaniu tekstu.
+Wyobraź sobie czytanie powieści, w której nie ma żadnych odstępów między słowami czy rozdziałami.
+<!-- indentation python -->
+Często mówi się, że "kod musi oddychać" - odstępy zwiększają czytelność kodu i pozwalają na jego szybsze zrozumienie oraz ułatwiają naprawienie występujących błędów.
+
+Odstępy można uzyskać poprzez użycie spacji.
+Spacje powinny być użyte po przecinkach, ale nigdy przed nimi. 
+Dodatkowo, większość operatorów (np. `=`, `+`, `-`, `==`) powinna być otoczona przez spacje.
+
+```julia, eval=false
+# Zalecane
+srednia = mean(wartosc)
+pole = bok_a * bok_b
+
+# Niewskazane
+srednia=mean ( wartosc) 
+pole=bok_a*bok_b
+```
+
+Spacje należy również używać do tworzenia wcięć - każde z nich powinno się składać z dwóch spacji.
+<!-- tab space war -->
+
+```{julia, eval=false}
+# Zalecane
+function moja_funkcja(x, y, z)
+    pod = y / z
+    wynik = x * pod
+    wynik
+end
+
+# Niewskazane
+function moja_funkcja(x, y, z)
+pod = y / z
+wynik = x * pod
+wynik
+end
+```
+
+Warto także ograniczać długość każdej linii kodu, żeby nie przekraczała ona ok. 80 znaków.
+Dzięki temu możliwe jest szybkie przeczytanie kodu czy też jego wydrukowanie.
+
+```{julia, eval=false}
+# Zalecane
+bardzo_wazny_wynik = moja_bardzo_wazna_funkcja("pierwszy argument",
+                                               b = "drugi argument", 
+                                               c = "trzeci argument")
+
+# Niewskazane
+bardzo_wazny_wynik = moja_bardzo_wazna_funkcja("pierwszy argument", "drugi argument", "trzeci argument")
+```
+
+### Komentarze
+
+Komentarze służą do wyjaśniania istotnych elementów kodu.
+Do komentowania w języku Julia służy operator `#`.
+
+```{julia, eval=false}
+# Mój komentarz
+```
+
+### Nazwy plików
+
+Nazwy plików powinny spełniać trzy wymagania - być łatwe (i) do odczytania przez komputer, (ii) do odczytania przez człowieka, (iii) do posortowania.
+
+Nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
+Warto też aby nazwy plików składały się tylko z małych liter.
+
+```{julia, eval=false}
+# Zalecane
+obliczanie-sredniej.R
+pomiary-temperatury.csv
+
+# Niewskazane
+Obliczanie Średniej.R
+pomiaryTemperatury!.csv
+```
+
+Dodatkowo wskazane jest dodanie wartości numerycznych przed nazwą pliku, jeżeli pliki mają jakąś kolejność.
+
+```{julia, eval=false}
+# Zalecane
+01_przygotowanie-danych.jl
+02_obliczanie-sredniej.jl
+
+# Niewskazane
+przygotowanie-danych.jl
+obliczanie-sredniej.jl
+```
+
+!!! note
+    Kodowanie znaków (ang. *character encodings*) jest to sposób sposób prezentacji znaków.
+    Istnieje szereg różnych standardów kodowania znaków.
+    Standard ASCII przyporządkowuje liczbom z zakresu 0-127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
+    Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków. 
+    Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 (lub CP1250).
+    Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich.
+    W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z "polskim" kodowaniem znaków może spowodować pojawienie się tzw. "krzaczków".
+    Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków.
+    Jest on obecnie zalecanym standardem na całym świecie.
+
+### Daty
+
+Istnieje wiele sposobów zapisu dat^[https://xkcd.com/1179/], co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
+Z ratunkiem w tej kwestii przychodzi norma [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), która definiuje daty kalendarzowe jako *YYYY-MM-DD*, czyli *ROK-MIESIĄC-DZIEŃ*.
+
+```{julia, eval=false}
+# Zalecane
+2019-06-02
+
+# Niewskazane
+wszelkie inne
+```
+
+## Dodatkowe materiały {#resources}
+
+Polskie książki:
+
+Angielskie książki:
+
+Blogi:
+
+Kursy:
+
+Serwisy internetowe:
+
+Meetups (spotkania początkujących i zaawansowanych użytkowników Julia):
+
+## Zadania {#zad2}
+
+Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się stosować do stylu podanego w sekcji \@ref(styl).
+
+1) Przejrzyj poniższą listę poleceń.
+Spróbuj określić uzyskane wyniki bez wykonywania kodu w Julia.
+
+```{julia, eval=false}
+x = 7
+y = -2
+x + 3
+y - 5
+x * 2
+y / 4
+x % 3
+x ÷ 3
+y ^ 2
+y ^ x
+```
+2) Jedziesz na krótkie wakacje i planujesz na nie zabrać 500 EUR.
+Aktualny kurs kupna EUR wynosi 4,31.
+Ile PLN musisz wydać?
+Wylicz to w Julia.
+
+3) Masz trapez o długości podstaw `a = 5` i `b = 6` oraz wysokości `h = 3`.
+Stwórz nowy obiekt `pole_trapezu`, który zawiera obliczone pole tego trapezu.
+4) Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN. 
+Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN.
+Wylicz w Julia, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
+<!--zadanie z poprawą stylu-->
+
+```{julia sol2, echo=false, eval=false}
+## Zadanie 2
+x = 500
+y = 4.31
+z = x * y
+
+## Zadanie 3 
+a = 5
+b = 6
+h = 3
+pole_trapezu = 0.5 * (a + b) * h
+
+## Zadanie 4
+r1 = 30 / 2  #promień pizzy 1
+r2 = 50 / 2  #promień pizzy 2
+pizza_30 = 23.5
+pizza_50 = 50
+p1 = 3.14 * r1^2 #pole pizzy 1
+p2 = 3.14 * r2^2 #pole pizzy 2
+p3 = p1 * 2 #pole dwóch pizz
+cena1 = p3 / (pizza_30 * 2)
+cena2 = p2 / pizza_50
+# Bardziej opłaca się kupienie jednej dużej pizzy
+```
+
+5) Przejrzyj linki zawarte w tym rozdziale, w szczególności Julia bloggers 
+Znajdź jeden lub dwa przykłady zastosowania Julia, które uważasz za ciekawe lub interesujące.
+
+
