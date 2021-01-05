@@ -1,0 +1,388 @@
+---
+weave_options:
+  term: true
+---
+
+# Funkcje {#funkcje}
+
+Funkcje to programy, który przyjmują pewne argumenty, przetwarzają je i zwracają jakiś wynik.
+Są one zbudowane z dostępnych elementów języka programowania jak i też z innych dostępnych funkcji.
+Funkcje mogą służyć do wielu celów, od prostych odliczeń arytmetycznych, poprzez przetwarzanie tekstu, tworzenie wykresów i map, aż do bardziej złożonych i specjalistycznych procedur. 
+Ich celem jest ułatwienie pracy programistycznej i zwiększenie czytelności kodu. 
+Zamiast wielokrotnie powtarzać te same linie kodu, możliwe jest napisanie funkcji raz, a następnie użycie jej wiele razy.
+
+## Struktura funkcji
+
+Funkcje są reprezentowane w R jako specjalne obiekty, które można uruchomić poprzez dodanie do ich nazwy nawiasów okrągłych.
+Przykładowo, funkcja `mean()` wylicza średnią.
+Może ona przyjąć kilka różnych argumentów, czyli pewnych obiektów lub parametrów wejściowych.
+W poniższym przykładzie do funkcji `mean()` zostały podane dwa argumenty (rycina \@ref(fig:funstr)).
+Pierwszy argument nazywa się `x` i przyjmuje on wektor numeryczny `economics$pop`, drugi argument nazywa się `na.rm` i został on ustalony na `TRUE`.
+
+```
+{r funstr, echo=FALSE, fig.cap="Przykład struktury funkcji w R.", out.width="80%"}
+knitr::include_graphics("images/funkcje.png")
+```
+
+## Wbudowane funkcje
+
+Julia posiada wiele wbudowanych funkcji, które znacznie ułatwiają wykonywanie bardziej złożonych operacji.
+Pierwsze z funkcji, w tym `[]`, zostały już poznane w sekcji \@ref(dzialania-na-obiektach).
+Ta funkcja pozwala na łączenie kolejnych obiektów rozdzielonych przecinkami.
+Poniższy obiekt, `x` jest w efekcie wektorem zawierającym trzy wartości `8.2`, `10.3` oraz `12.0`.
+
+```julia
+x = [8.2, 10.3, 12.0]
+```
+
+Wyliczenie średniej z tych trzech wartości wymaga ich zsumowania, a następnie podzielenia uzyskanej wartości przez liczbę wartości.
+
+```julia
+(8.2 + 10.3 + 12.0) / 3
+```
+
+W przypadku jednak, gdy chcemy dodać czwartą, piątą, itd. wartość należy zmieniać kod w co najmniej dwóch miejscach.
+Konieczne jest dodanie nowej wartości do zsumowania, a następnie zmianę wartości określającej liczbę elementów.
+
+Zamiast tych dwóch operacji, można wykonać tylko jedną zmianę w obiekcie `x`, a następnie przetworzyć go używając funkcji wbudowanych w Julia - `sum()` oraz `length()`.
+Pierwsza z nich sumuje wartości z wektora, druga natomiast zwraca liczbę elementów w wektorze.
+
+```julia
+sum(x) / length(x)
+```
+
+Powyższy kod można też dalej uprościć, poprzez użycie wbudowanej w R funkcji do liczenia średniej - `mean()`.
+
+```julia
+mean(x)
+```
+
+Trzeba włączyć wbudowany pakiet `Statistics`
+
+```julia
+using Statistics
+mean(x)
+```
+
+Jej użycie powoduje, że wystarczy wykonać tylko jedną zmianę w obiekcie `x`, aby uzyskać poprawny wynik, a dodatkowo napisanie tego obliczenia wymaga napisania znacznie krótszego kodu.
+
+Funkcje można używać w celu wyświetlenia oczekiwanego rezultatu, ale także, aby na podstawie wyniku funkcji tworzyć nowe obiekty, takie jak `y` poniżej.
+
+```julia
+y = mean(x)
+```
+
+## Kolejność wykonywania funkcji {#kolejnosc-funkcji}
+
+Wykonywanie funkcji w Julia odbywa się linia po linii, od góry do dołu.
+
+```julia
+a = 4
+b = 5
+a2 = a^2
+b2 = b^2
+```
+
+Julia pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji^[Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora `|>`.].
+Pierwszy z nich polega na tworzeniu pośrednich obiektów jako wyników działania pojedynczych funkcji.
+
+```julia
+suma_a2b2 = sum([a2, b2])
+przekatna = sqrt(suma_a2b2)
+przekatna
+```
+
+Drugi sposób opiera się o zagnieżdżanie funkcji. 
+W tej sytuacji najpierw wykonywana jest funkcja w środku, na następnie kolejne funkcje coraz bliżej brzegu.
+
+```julia
+przekatna = sqrt(sum([a2, b2]))
+przekatna
+```
+
+Trzeci sposób opiera się na wykorzystaniu operatora `|>`.
+
+```julia
+przekatna = [a2, b2] |> sum |> sqrt
+przekatna
+```
+
+
+## Dokumentacja funkcji
+
+Każda wbudowana funkcja w Julia posiada swoją dokumentację^[Niektóre zbiory danych również posiadają swoje pliki pomocy.].
+Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.
+
+```{julia, eval=false}
+?mean
+```
+
+```
+help?> mean
+search: mean mean! median median! SegmentationFault macroexpand @macroexpand
+
+  mean(itr)
+
+  Compute the mean of all elements in a collection.
+
+  │ Note
+  │
+  │  If itr contains NaN or missing values, the result is also NaN or
+  │  missing (missing takes precedence if array contains both). Use the
+  │  skipmissing function to omit missing entries and compute the mean of
+  │  non-missing values.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia> using Statistics
+  
+  julia> mean(1:20)
+  10.5
+  
+  julia> mean([1, missing, 3])
+  missing
+  
+  julia> mean(skipmissing([1, missing, 3]))
+  2.0
+
+  ───────────────────────────────────────────────────────────────────────────────
+
+  mean(f::Function, itr)
+```
+## Pakiety
+
+Pakiet to zorganizowany zbiór funkcji, który rozszerza możliwości R.
+
+Do instalacji pakietu w R z repozytorium CRAN służy wbudowana funkcja `Pkg.add`, np:
+
+```{julia, eval=false}
+using Pkg
+Pkg.add("DataFrames") #instalacja pakietu MixedModels
+```
+
+Alternatywnie, można wejść w moduł zarządzania pakietami użuwając `]`
+
+```{julia, eval=false}
+] add DataFrames  #instalacja pakietu MixedModels
+```
+
+
+Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji `using`.
+Dołączenie wybranych pakietów do Julia robimy po każdym uruchomieniu Julia.
+
+```julia
+using DataFrames
+```
+
+W przypadku, gdy chcemy użyć zewnętrznej funkcji, ale nie dołączyliśmy odpowiedniego pakietu, pojawi się błąd o treści `ERROR: UndefVarError: DataFrame not defined`.
+
+```{julia, eval=false}
+julia> DataFrame("A" => [1,2,3])
+ERROR: UndefVarError: DataFrame not defined
+Stacktrace:
+ [1] top-level scope at REPL[110]:1
+```
+
+
+## Algorytmy
+
+Algorytm to zbiór kroków prowadzących do uzyskania określonego celu.
+Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę.
+Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.
+
+Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu. 
+Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania<!--^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)]--> w formie skryptu (sekcja \@ref(tworzenie-skryptow)) lub funkcji (sekcja \@ref(budowanie-funkcji)).
+
+## Tworzenie skryptów {#tworzenie-skryptow}
+
+<!--kodowanie tekstu-->
+Skrypt w Julia to plik testowy z rozszerzeniem `.jl`, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
+Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
+Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości temperatury w stopniach ze skali Fahrenheita na skalę Celsjusza.
+Otrzymaliśmy informację, że w "mieście A" temperatura w stopniach Fahrenheita wynosi 75.
+
+```julia
+miasto_a_f = 75
+```
+
+Pierwszym naszym krokiem powinno być dowiedzenie się jaka jest relacja pomiędzy skalą Fahrenheita na skalą Celsjusza.
+
+$$T_{Celsjusz} = \frac{T_{Fahrenheit} - 32}{1.8}$$
+
+Następnie powyższy wzór można przepisać do postaci kodu w języku R oraz podstawić do niego wartość temperatury w stopniach Fahrenheita w mieście A.
+Ostatnim etapem jest wyświetlenie uzyskanego wyniku - temperatura w mieście A wynosi ok. 24 stopnie Celsjusza.
+
+```julia
+miasto_a_c = (miasto_a_f - 32) / 1.8
+```
+
+Powyższe kroki można również zapisać do pliku tekstowego. 
+
+```{julia, eval=false}
+# plik przeliczanie-temp.jl
+miasto_a_f = 75
+miasto_a_c = (miasto_a_f - 32) / 1.8
+```
+
+Co można zrobić jeżeli mamy więcej podobnych pomiarów, które chcemy wykonać?
+Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a później naniesienie małych zmian, np. nazw obiektów.
+<!-- ^[o wekrtoryzacji] -->
+<!-- or use data.frame? -->
+
+```julia
+miasto_a_f = 75
+miasto_b_f = 110
+miasto_c_f = 0
+miasto_a_c = (miasto_a_f - 32) / 1.8
+miasto_b_c = (miasto_b_f - 32) / 1.8
+miasto_c_c = (miasto_c_f - 32) / 1.8
+```
+
+Powyższe podejście jest poprawne, ale ma ono kilka wad:
+
+* Łatwo jest o popełnienie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).
+* Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność.
+* Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne.
+
+To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. *Don't Repeat Yourself*).
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@wickham2016r radzą tworzyć nowe funkcje, gdy ten sam kod powtarza się co najmniej trzy razy.].
+
+
+## Budowanie funkcji
+
+Funkcje pozwalają na automatyzację często używanych obliczeń.
+Formalnie funkcje składają się z trzech elementów: listy argumentów (ang. *formals*), ciała funkcji (ang. *body*) oraz środowiska (ang. *environment*).
+Pierwsze dwa elementy ustala twórca funkcji, natomiast środowisko jest określane na podstawie tego, gdzie dana funkcja została zdefiniowana<!--^[footnote o environment]https://rstudio-education.github.io/hopr/environments.html-->.
+Dodatkowo każda funkcja ma swoją nazwę.
+
+```julia
+function moja_funkcja(x, y, z)
+  pod = y / z
+  wynik = x * pod
+  wynik
+end
+```
+
+```julia
+methods(moja_funkcja)
+```
+
+Przykładowa funkcja odpowiadająca problemowi z poprzedniej sekcji może wyglądać w poniższy sposób:
+
+```julia
+function konwersja_temp(temperatura_f)
+    (temperatura_f - 32) / 1.8
+end
+```
+
+Nowa funkcja nazywa się `konwersja_temp()` oraz posiada tylko jeden argument `temperatura_f`.
+Ciało funkcji zawiera natomiast wzór potrzebny do obliczeń przepisany do Julia.
+Ważne jest to, że obiekt użyty wewnątrz funkcji (`temperatura_f`) jest taki sam jak wejściowy argument.
+
+Po stworzeniu funkcji warto sprawdzić czy jej działanie odpowiada naszym oczekiwaniom.
+
+```julia
+konwersja_temp(75)
+konwersja_temp(110)
+konwersja_temp(0)
+konwersja_temp(c(0, 75, 110))
+```
+
+## Komunikaty
+
+Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów komunikatów.
+Trzy podstawowe z nich to:
+
+1. Błędy (ang. *Error*)
+2. Ostrzeżenia (ang. *Warn*)
+3. Wiadomości (ang. *Info*) 
+
+Błędy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
+Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu `"abecadło"`.
+Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.
+
+```{julia, error=true}
+log("abecadło")
+```
+
+Ostrzeżenia zazwyczaj występują kiedy nastąpił jakiś problem z wykonaniem funkcji, ale jej działanie mogło być dokończone.
+Często sugerują one użytkownikowi, aby dokładnie przyjrzał się wykonywanej funkcji i upewnił się czy na pewno ustala on odpowiednie wartości dla argumentów funkcji.
+Poniżej została podjęta próba wyliczenia logarytmu naturalnego dla wartości ujemnej.
+W efekcie pojawił się komunikat błędu, który mówi, że nie mozna wykonać tego działania.
+
+```julia
+log(-1)
+```
+
+Wiadomości pojawiają się, aby przekazać użytkownikowi jakąś informację.
+<!-- Może to dotyczyć np.  -->
+
+```{julia, echo=false}
+function inna_funkcja(x)
+  @info "Chcę ciebie o czymś poinformować."
+  log(x)
+end
+```
+
+Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć w rozdziale \@ref(zlozone-funkcje).
+
+
+## Zadania {#zad3}
+
+1) Zobacz jak wygląda plik pomocy funkcji `mean()`.
+Wykonaj zawarte w nim przykłady.
+Co przedstawiają uzyskane wyniki?
+2) Zainstaluj pakiet **Pipe**. 
+Spróbuj użyć operatora `@pipe` z tego pakietu na przykładzie z sekcji \@ref(kolejnosc-funkcji) dotyczącym wyliczania przekątnej prostokąta.
+3) Stwórz nowy plik skryptu R nazywający się `01_zadania-funkcje.jl`.
+W tym pliku, stwórz nowy obiekt `poznan`, który przyjmuje wartość `8.4`, napisz przeliczenie wartości tego obiektu ze stopni Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
+Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.
+4) Stwórz nową funkcję, która służy do przeliczania wartości ze stopni Celsjusza na stopnie Fahrenheita.
+Jak nazwiesz taką funkcję?
+5) Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
+Jak nazwiesz taką funkcję?
+6) Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na kilometry na godzinę.
+Jak nazwiesz taką funkcję?
+7) Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na mile lądowe na godzinę.
+Jak nazwiesz taką funkcję?
+8) Stwórz nową funkcję, która służy do wyliczania pola trapezu na podstawie długości podstaw oraz wysokości trapezu.
+Jak nazwiesz taką funkcję?
+9) Wykonaj poniższy kod. 
+
+Co oznacza uzyskany wynik?
+
+```{julia, error=true, eval=false}
+mean()
+```
+
+10) Wykonaj poniższy kod. 
+
+Co oznacza uzyskany wynik?
+
+```{julia, error=true, eval=false}
+mean("abecadło")
+```
+
+11) Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+```{julia, error=true, eval=false}
+mean(sqrt())
+```
+12) Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+```{julia, error=true, eval=false}
+length("abecadło")
+```
+13) Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+```{julia, error=true, eval=false}
+u = 2
+z = 3 + v
+v = 7
+```
+
+
+
+
+

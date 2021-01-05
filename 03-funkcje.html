@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<HTML lang = "en">
+<HEAD>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  
+<style>
+pre.hljl {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+    overflow-x: auto;
+    color: rgb(68,68,68); background-color: rgb(251,251,251); }
+pre.hljl > span.hljl-t { }
+pre.hljl > span.hljl-w { }
+pre.hljl > span.hljl-e { }
+pre.hljl > span.hljl-eB { }
+pre.hljl > span.hljl-o { }
+pre.hljl > span.hljl-k { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kc { color: rgb(59,151,46); font-style: italic; }
+pre.hljl > span.hljl-kd { color: rgb(214,102,97); font-style: italic; }
+pre.hljl > span.hljl-kn { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kp { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kr { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kt { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-n { }
+pre.hljl > span.hljl-na { }
+pre.hljl > span.hljl-nb { }
+pre.hljl > span.hljl-nbp { }
+pre.hljl > span.hljl-nc { }
+pre.hljl > span.hljl-ncB { }
+pre.hljl > span.hljl-nd { color: rgb(214,102,97); }
+pre.hljl > span.hljl-ne { }
+pre.hljl > span.hljl-neB { }
+pre.hljl > span.hljl-nf { color: rgb(66,102,213); }
+pre.hljl > span.hljl-nfm { color: rgb(66,102,213); }
+pre.hljl > span.hljl-np { }
+pre.hljl > span.hljl-nl { }
+pre.hljl > span.hljl-nn { }
+pre.hljl > span.hljl-no { }
+pre.hljl > span.hljl-nt { }
+pre.hljl > span.hljl-nv { }
+pre.hljl > span.hljl-nvc { }
+pre.hljl > span.hljl-nvg { }
+pre.hljl > span.hljl-nvi { }
+pre.hljl > span.hljl-nvm { }
+pre.hljl > span.hljl-l { }
+pre.hljl > span.hljl-ld { color: rgb(148,91,176); font-style: italic; }
+pre.hljl > span.hljl-s { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sa { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sb { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sc { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sd { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdC { color: rgb(201,61,57); }
+pre.hljl > span.hljl-se { color: rgb(59,151,46); }
+pre.hljl > span.hljl-sh { color: rgb(201,61,57); }
+pre.hljl > span.hljl-si { }
+pre.hljl > span.hljl-so { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sr { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ss { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ssB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-nB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nbB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nfB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nh { color: rgb(59,151,46); }
+pre.hljl > span.hljl-ni { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nil { color: rgb(59,151,46); }
+pre.hljl > span.hljl-noB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-oB { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-ow { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-p { }
+pre.hljl > span.hljl-c { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-ch { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cm { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cp { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cpB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cs { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-csB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-g { }
+pre.hljl > span.hljl-gd { }
+pre.hljl > span.hljl-ge { }
+pre.hljl > span.hljl-geB { }
+pre.hljl > span.hljl-gh { }
+pre.hljl > span.hljl-gi { }
+pre.hljl > span.hljl-go { }
+pre.hljl > span.hljl-gp { }
+pre.hljl > span.hljl-gs { }
+pre.hljl > span.hljl-gsB { }
+pre.hljl > span.hljl-gt { }
+</style>
+
+
+
+  <style type="text/css">
+  @font-face {
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+}
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  font-family: monospace, monospace;
+  font-size : 0.8em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+thead th {
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+tr:nth-child(odd){
+  background-color: rgb(248,248,248);
+}
+
+
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 3.6rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.4rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.2rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.8rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 2.4rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+p {
+  margin-top: 0; }
+a {
+  color: #1EAEDB; }
+a:hover {
+  color: #0FA0CE; }
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+ul {
+  list-style: circle; }
+ol {
+  list-style: decimal; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li > p {margin : 0;}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 1.0rem; }
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre.hljl {
+  margin: 0 0 10px;
+  display: block;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding : 5px;
+}
+
+pre.output {
+  background: #ffffff;
+}
+
+pre.code {
+  background: #ffffff;
+}
+
+pre.julia-error {
+  color : red
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+
+@media (min-width: 400px) {}
+@media (min-width: 550px) {}
+@media (min-width: 750px) {}
+@media (min-width: 1000px) {}
+@media (min-width: 1200px) {}
+
+h1.title {margin-top : 20px}
+img {max-width : 100%}
+div.title {text-align: center;}
+
+  </style>
+</HEAD>
+
+<BODY>
+  <div class ="container">
+    <div class = "row">
+      <div class = "col-md-12 twelve columns">
+        <div class="title">
+          
+          
+          
+        </div>
+
+        <h1>Funkcje &#123;#funkcje&#125;</h1>
+<p>Funkcje to programy, który przyjmują pewne argumenty, przetwarzają je i zwracają jakiś wynik. Są one zbudowane z dostępnych elementów języka programowania jak i też z innych dostępnych funkcji. Funkcje mogą służyć do wielu celów, od prostych odliczeń arytmetycznych, poprzez przetwarzanie tekstu, tworzenie wykresów i map, aż do bardziej złożonych i specjalistycznych procedur.  Ich celem jest ułatwienie pracy programistycznej i zwiększenie czytelności kodu.  Zamiast wielokrotnie powtarzać te same linie kodu, możliwe jest napisanie funkcji raz, a następnie użycie jej wiele razy.</p>
+<h2>Struktura funkcji</h2>
+<p>Funkcje są reprezentowane w R jako specjalne obiekty, które można uruchomić poprzez dodanie do ich nazwy nawiasów okrągłych. Przykładowo, funkcja <code>mean&#40;&#41;</code> wylicza średnią. Może ona przyjąć kilka różnych argumentów, czyli pewnych obiektów lub parametrów wejściowych. W poniższym przykładzie do funkcji <code>mean&#40;&#41;</code> zostały podane dwa argumenty &#40;rycina \@ref&#40;fig:funstr&#41;&#41;. Pierwszy argument nazywa się <code>x</code> i przyjmuje on wektor numeryczny <code>economics&#36;pop</code>, drugi argument nazywa się <code>na.rm</code> i został on ustalony na <code>TRUE</code>.</p>
+<pre><code>&#123;r funstr, echo&#61;FALSE, fig.cap&#61;&quot;Przykład struktury funkcji w R.&quot;, out.width&#61;&quot;80&#37;&quot;&#125;
+knitr::include_graphics&#40;&quot;images/funkcje.png&quot;&#41;</code></pre>
+<h2>Wbudowane funkcje</h2>
+<p>Julia posiada wiele wbudowanych funkcji, które znacznie ułatwiają wykonywanie bardziej złożonych operacji. Pierwsze z funkcji, w tym <code>&#91;&#93;</code>, zostały już poznane w sekcji \@ref&#40;dzialania-na-obiektach&#41;. Ta funkcja pozwala na łączenie kolejnych obiektów rozdzielonych przecinkami. Poniższy obiekt, <code>x</code> jest w efekcie wektorem zawierającym trzy wartości <code>8.2</code>, <code>10.3</code> oraz <code>12.0</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-nfB'>8.2</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-nfB'>10.3</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-nfB'>12.0</span><span class='hljl-p'>]</span><span class='hljl-t'>
+3-element Array{Float64,1}:
+  8.2
+ 10.3
+ 12.0</span>
+</pre>
+
+<p>Wyliczenie średniej z tych trzech wartości wymaga ich zsumowania, a następnie podzielenia uzyskanej wartości przez liczbę wartości.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-p'>(</span><span class='hljl-nfB'>8.2</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-nfB'>10.3</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-nfB'>12.0</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+10.166666666666666</span>
+</pre>
+
+<p>W przypadku jednak, gdy chcemy dodać czwartą, piątą, itd. wartość należy zmieniać kod w co najmniej dwóch miejscach. Konieczne jest dodanie nowej wartości do zsumowania, a następnie zmianę wartości określającej liczbę elementów.</p>
+<p>Zamiast tych dwóch operacji, można wykonać tylko jedną zmianę w obiekcie <code>x</code>, a następnie przetworzyć go używając funkcji wbudowanych w Julia - <code>sum&#40;&#41;</code> oraz <code>length&#40;&#41;</code>. Pierwsza z nich sumuje wartości z wektora, druga natomiast zwraca liczbę elementów w wektorze.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>sum</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-nf'>length</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+10.166666666666666</span>
+</pre>
+
+<p>Powyższy kod można też dalej uprościć, poprzez użycie wbudowanej w R funkcji do liczenia średniej - <code>mean&#40;&#41;</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>mean</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+Error: UndefVarError: mean not defined</span>
+</pre>
+
+<p>Trzeba włączyć wbudowany pakiet <code>Statistics</code></p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Statistics</span><span class='hljl-t'>
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>mean</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+10.166666666666666</span>
+</pre>
+
+<p>Jej użycie powoduje, że wystarczy wykonać tylko jedną zmianę w obiekcie <code>x</code>, aby uzyskać poprawny wynik, a dodatkowo napisanie tego obliczenia wymaga napisania znacznie krótszego kodu.</p>
+<p>Funkcje można używać w celu wyświetlenia oczekiwanego rezultatu, ale także, aby na podstawie wyniku funkcji tworzyć nowe obiekty, takie jak <code>y</code> poniżej.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>mean</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+10.166666666666666</span>
+</pre>
+
+<h2>Kolejność wykonywania funkcji &#123;#kolejnosc-funkcji&#125;</h2>
+<p>Wykonywanie funkcji w Julia odbywa się linia po linii, od góry do dołu.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>a</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>4</span><span class='hljl-t'>
+4
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>b</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>5</span><span class='hljl-t'>
+5
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>a2</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>a</span><span class='hljl-oB'>^</span><span class='hljl-ni'>2</span><span class='hljl-t'>
+16
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>b2</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>b</span><span class='hljl-oB'>^</span><span class='hljl-ni'>2</span><span class='hljl-t'>
+25</span>
+</pre>
+
+<p>Julia pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji^&#91;Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora <code>|&gt;</code>.&#93;. Pierwszy z nich polega na tworzeniu pośrednich obiektów jako wyników działania pojedynczych funkcji.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>suma_a2b2</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>sum</span><span class='hljl-p'>([</span><span class='hljl-n'>a2</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>b2</span><span class='hljl-p'>])</span><span class='hljl-t'>
+41
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>przekatna</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-n'>suma_a2b2</span><span class='hljl-p'>)</span><span class='hljl-t'>
+6.4031242374328485
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>przekatna</span><span class='hljl-t'>
+6.4031242374328485</span>
+</pre>
+
+<p>Drugi sposób opiera się o zagnieżdżanie funkcji.  W tej sytuacji najpierw wykonywana jest funkcja w środku, na następnie kolejne funkcje coraz bliżej brzegu.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>przekatna</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-nf'>sum</span><span class='hljl-p'>([</span><span class='hljl-n'>a2</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>b2</span><span class='hljl-p'>]))</span><span class='hljl-t'>
+6.4031242374328485
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>przekatna</span><span class='hljl-t'>
+6.4031242374328485</span>
+</pre>
+
+<p>Trzeci sposób opiera się na wykorzystaniu operatora <code>|&gt;</code>.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>przekatna</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-n'>a2</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>b2</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-oB'>|&gt;</span><span class='hljl-t'> </span><span class='hljl-n'>sum</span><span class='hljl-t'> </span><span class='hljl-oB'>|&gt;</span><span class='hljl-t'> </span><span class='hljl-n'>sqrt</span><span class='hljl-t'>
+6.4031242374328485
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>przekatna</span><span class='hljl-t'>
+6.4031242374328485</span>
+</pre>
+
+<h2>Dokumentacja funkcji</h2>
+<p>Każda wbudowana funkcja w Julia posiada swoją dokumentację^&#91;Niektóre zbiory danych również posiadają swoje pliki pomocy.&#93;. Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-oB'>?</span><span class='hljl-n'>mean</span>
+</pre>
+
+
+<pre><code>help?&gt; mean
+search: mean mean&#33; median median&#33; SegmentationFault macroexpand @macroexpand
+
+  mean&#40;itr&#41;
+
+  Compute the mean of all elements in a collection.
+
+  │ Note
+  │
+  │  If itr contains NaN or missing values, the result is also NaN or
+  │  missing &#40;missing takes precedence if array contains both&#41;. Use the
+  │  skipmissing function to omit missing entries and compute the mean of
+  │  non-missing values.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia&gt; using Statistics
+  
+  julia&gt; mean&#40;1:20&#41;
+  10.5
+  
+  julia&gt; mean&#40;&#91;1, missing, 3&#93;&#41;
+  missing
+  
+  julia&gt; mean&#40;skipmissing&#40;&#91;1, missing, 3&#93;&#41;&#41;
+  2.0
+
+  ───────────────────────────────────────────────────────────────────────────────
+
+  mean&#40;f::Function, itr&#41;</code></pre>
+<h2>Pakiety</h2>
+<p>Pakiet to zorganizowany zbiór funkcji, który rozszerza możliwości R.</p>
+<p>Do instalacji pakietu w R z repozytorium CRAN służy wbudowana funkcja <code>Pkg.add</code>, np:</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Pkg</span><span class='hljl-t'>
+</span><span class='hljl-n'>Pkg</span><span class='hljl-oB'>.</span><span class='hljl-nf'>add</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;DataFrames&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'>#instalacja pakietu MixedModels</span>
+</pre>
+
+
+<p>Alternatywnie, można wejść w moduł zarządzania pakietami użuwając <code>&#93;</code></p>
+
+
+<pre class='hljl'>
+<span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-n'>add</span><span class='hljl-t'> </span><span class='hljl-n'>DataFrames</span><span class='hljl-t'>  </span><span class='hljl-cs'>#instalacja pakietu MixedModels</span>
+</pre>
+
+
+<p>Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji <code>using</code>. Dołączenie wybranych pakietów do Julia robimy po każdym uruchomieniu Julia.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>DataFrames</span><span class='hljl-t'>s</span>
+</pre>
+
+<p>W przypadku, gdy chcemy użyć zewnętrznej funkcji, ale nie dołączyliśmy odpowiedniego pakietu, pojawi się błąd o treści <code>ERROR: UndefVarError: DataFrame not defined</code>.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-n'>julia</span><span class='hljl-oB'>&gt;</span><span class='hljl-t'> </span><span class='hljl-nf'>DataFrame</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;A&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-ni'>1</span><span class='hljl-p'>,</span><span class='hljl-ni'>2</span><span class='hljl-p'>,</span><span class='hljl-ni'>3</span><span class='hljl-p'>])</span><span class='hljl-t'>
+</span><span class='hljl-n'>ERROR</span><span class='hljl-oB'>:</span><span class='hljl-t'> </span><span class='hljl-n'>UndefVarError</span><span class='hljl-oB'>:</span><span class='hljl-t'> </span><span class='hljl-n'>DataFrame</span><span class='hljl-t'> </span><span class='hljl-n'>not</span><span class='hljl-t'> </span><span class='hljl-n'>defined</span><span class='hljl-t'>
+</span><span class='hljl-n'>Stacktrace</span><span class='hljl-oB'>:</span><span class='hljl-t'>
+ </span><span class='hljl-p'>[</span><span class='hljl-ni'>1</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-n'>top</span><span class='hljl-oB'>-</span><span class='hljl-n'>level</span><span class='hljl-t'> </span><span class='hljl-n'>scope</span><span class='hljl-t'> </span><span class='hljl-n'>at</span><span class='hljl-t'> </span><span class='hljl-n'>REPL</span><span class='hljl-p'>[</span><span class='hljl-ni'>110</span><span class='hljl-p'>]</span><span class='hljl-oB'>:</span><span class='hljl-ni'>1</span>
+</pre>
+
+
+<h2>Algorytmy</h2>
+<p>Algorytm to zbiór kroków prowadzących do uzyskania określonego celu. Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę. Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.</p>
+<p>Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu.  Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania<!-- ^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)] --> w formie skryptu &#40;sekcja \@ref&#40;tworzenie-skryptow&#41;&#41; lub funkcji &#40;sekcja \@ref&#40;budowanie-funkcji&#41;&#41;.</p>
+<h2>Tworzenie skryptów &#123;#tworzenie-skryptow&#125;</h2>
+
+<!-- kodowanie tekstu -->
+
+<p>Skrypt w Julia to plik testowy z rozszerzeniem <code>.jl</code>, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu. Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu. Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości temperatury w stopniach ze skali Fahrenheita na skalę Celsjusza. Otrzymaliśmy informację, że w &quot;mieście A&quot; temperatura w stopniach Fahrenheita wynosi 75.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_a_f</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>75</span><span class='hljl-t'>
+75</span>
+</pre>
+
+<p>Pierwszym naszym krokiem powinno być dowiedzenie się jaka jest relacja pomiędzy skalą Fahrenheita na skalą Celsjusza.</p>
+<p class="math">\[
+T_{Celsjusz} = \frac{T_{Fahrenheit} - 32}{1.8}
+\]</p>
+<p>Następnie powyższy wzór można przepisać do postaci kodu w języku R oraz podstawić do niego wartość temperatury w stopniach Fahrenheita w mieście A. Ostatnim etapem jest wyświetlenie uzyskanego wyniku - temperatura w mieście A wynosi ok. 24 stopnie Celsjusza.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_a_c</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>miasto_a_f</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.8</span><span class='hljl-t'>
+23.88888888888889</span>
+</pre>
+
+<p>Powyższe kroki można również zapisać do pliku tekstowego. </p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># plik przeliczanie-temp.jl</span><span class='hljl-t'>
+</span><span class='hljl-n'>miasto_a_f</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>75</span><span class='hljl-t'>
+</span><span class='hljl-n'>miasto_a_c</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>miasto_a_f</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.8</span>
+</pre>
+
+
+<p>Co można zrobić jeżeli mamy więcej podobnych pomiarów, które chcemy wykonać? Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a później naniesienie małych zmian, np. nazw obiektów.</p>
+
+<!--  ^[o wekrtoryzacji]  -->
+
+
+<!--  or use data.frame?  -->
+
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_a_f</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>75</span><span class='hljl-t'>
+75
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_b_f</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>110</span><span class='hljl-t'>
+110
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_c_f</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>0</span><span class='hljl-t'>
+0
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_a_c</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>miasto_a_f</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.8</span><span class='hljl-t'>
+23.88888888888889
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_b_c</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>miasto_b_f</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.8</span><span class='hljl-t'>
+43.333333333333336
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-n'>miasto_c_c</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>miasto_c_f</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.8</span><span class='hljl-t'>
+-17.77777777777778</span>
+</pre>
+
+<p>Powyższe podejście jest poprawne, ale ma ono kilka wad:</p>
+<ul>
+<li><p>Łatwo jest o popełnienie jakiegoś prostego błędu lub literówki podczas adaptacji kodu &#40;np. można zapomnieć zmienić nazwę jakiejś zmiennej&#41;.</p>
+</li>
+<li><p>Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność.</p>
+</li>
+<li><p>Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne.</p>
+</li>
+</ul>
+<p>To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY &#40;Nie powtarzaj się, ang. <em>Don&#39;t Repeat Yourself</em>&#41;. Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^&#91;@wickham2016r radzą tworzyć nowe funkcje, gdy ten sam kod powtarza się co najmniej trzy razy.&#93;.</p>
+<h2>Budowanie funkcji</h2>
+<p>Funkcje pozwalają na automatyzację często używanych obliczeń. Formalnie funkcje składają się z trzech elementów: listy argumentów &#40;ang. <em>formals</em>&#41;, ciała funkcji &#40;ang. <em>body</em>&#41; oraz środowiska &#40;ang. <em>environment</em>&#41;. Pierwsze dwa elementy ustala twórca funkcji, natomiast środowisko jest określane na podstawie tego, gdzie dana funkcja została zdefiniowana<!-- ^[footnote o environment]https://rstudio-education.github.io/hopr/environments.html -->. Dodatkowo każda funkcja ma swoją nazwę.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>moja_funkcja</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>z</span><span class='hljl-p'>)</span><span class='hljl-t'>
+         </span><span class='hljl-n'>pod</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>z</span><span class='hljl-t'>
+         </span><span class='hljl-n'>wynik</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>pod</span><span class='hljl-t'>
+         </span><span class='hljl-n'>wynik</span><span class='hljl-t'>
+       </span><span class='hljl-k'>end</span><span class='hljl-t'>
+moja_funkcja (generic function with 1 method)</span>
+</pre>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>methods</span><span class='hljl-p'>(</span><span class='hljl-n'>moja_funkcja</span><span class='hljl-p'>)</span><span class='hljl-t'>
+# 1 method for generic function &quot;moja_funkcja&quot;:
+[1] moja_funkcja(x, y, z) in Main.##WeaveSandBox#276 at /Users/berenz/git/ksiazka/elp-julia/03-funkcje.jmd:1</span>
+</pre>
+
+<p>Przykładowa funkcja odpowiadająca problemowi z poprzedniej sekcji może wyglądać w poniższy sposób:</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>konwersja_temp</span><span class='hljl-p'>(</span><span class='hljl-n'>temperatura_f</span><span class='hljl-p'>)</span><span class='hljl-t'>
+           </span><span class='hljl-p'>(</span><span class='hljl-n'>temperatura_f</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.8</span><span class='hljl-t'>
+       </span><span class='hljl-k'>end</span><span class='hljl-t'>
+konwersja_temp (generic function with 1 method)</span>
+</pre>
+
+<p>Nowa funkcja nazywa się <code>konwersja_temp&#40;&#41;</code> oraz posiada tylko jeden argument <code>temperatura_f</code>. Ciało funkcji zawiera natomiast wzór potrzebny do obliczeń przepisany do Julia. Ważne jest to, że obiekt użyty wewnątrz funkcji &#40;<code>temperatura_f</code>&#41; jest taki sam jak wejściowy argument.</p>
+<p>Po stworzeniu funkcji warto sprawdzić czy jej działanie odpowiada naszym oczekiwaniom.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>konwersja_temp</span><span class='hljl-p'>(</span><span class='hljl-ni'>75</span><span class='hljl-p'>)</span><span class='hljl-t'>
+23.88888888888889
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>konwersja_temp</span><span class='hljl-p'>(</span><span class='hljl-ni'>110</span><span class='hljl-p'>)</span><span class='hljl-t'>
+43.333333333333336
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>konwersja_temp</span><span class='hljl-p'>(</span><span class='hljl-ni'>0</span><span class='hljl-p'>)</span><span class='hljl-t'>
+-17.77777777777778
+
+</span><span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>konwersja_temp</span><span class='hljl-p'>(</span><span class='hljl-nf'>c</span><span class='hljl-p'>(</span><span class='hljl-ni'>0</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>75</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>110</span><span class='hljl-p'>))</span><span class='hljl-t'>
+Error: UndefVarError: c not defined</span>
+</pre>
+
+<h2>Komunikaty</h2>
+<p>Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów komunikatów. Trzy podstawowe z nich to:</p>
+<ol>
+<li><p>Błędy &#40;ang. <em>Error</em>&#41;</p>
+</li>
+<li><p>Ostrzeżenia &#40;ang. <em>Warn</em>&#41;</p>
+</li>
+<li><p>Wiadomości &#40;ang. <em>Info</em>&#41; </p>
+</li>
+</ol>
+<p>Błędy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie. Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu <code>&quot;abecadło&quot;</code>. Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>log</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;abecadło&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+Error: MethodError: no method matching log(::String)
+Closest candidates are:
+  log(!Matched::BigFloat) at mpfr.jl:656
+  log(!Matched::Float16) at math.jl:1144
+  log(!Matched::Missing) at math.jl:1197
+  ...</span>
+</pre>
+
+<p>Ostrzeżenia zazwyczaj występują kiedy nastąpił jakiś problem z wykonaniem funkcji, ale jej działanie mogło być dokończone. Często sugerują one użytkownikowi, aby dokładnie przyjrzał się wykonywanej funkcji i upewnił się czy na pewno ustala on odpowiednie wartości dla argumentów funkcji. Poniżej została podjęta próba wyliczenia logarytmu naturalnego dla wartości ujemnej. W efekcie pojawił się komunikat błędu, który mówi, że nie mozna wykonać tego działania.</p>
+
+<pre class='hljl'>
+<span class='hljl-nB'>julia&gt; </span><span class='hljl-nf'>log</span><span class='hljl-p'>(</span><span class='hljl-oB'>-</span><span class='hljl-ni'>1</span><span class='hljl-p'>)</span><span class='hljl-t'>
+Error: DomainError with -1.0:
+log will only return a complex result if called with a complex argument. Try log(Complex(x)).</span>
+</pre>
+
+<p>Wiadomości pojawiają się, aby przekazać użytkownikowi jakąś informację.</p>
+
+<!--  Może to dotyczyć np.   -->
+
+
+
+<p>Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć w rozdziale \@ref&#40;zlozone-funkcje&#41;.</p>
+<h2>Zadania &#123;#zad3&#125;</h2>
+<ol>
+<li><p>Zobacz jak wygląda plik pomocy funkcji <code>mean&#40;&#41;</code>.</p>
+</li>
+</ol>
+<p>Wykonaj zawarte w nim przykłady. Co przedstawiają uzyskane wyniki?</p>
+<ol start="2">
+<li><p>Zainstaluj pakiet <strong>Pipe</strong>. </p>
+</li>
+</ol>
+<p>Spróbuj użyć operatora <code>@pipe</code> z tego pakietu na przykładzie z sekcji \@ref&#40;kolejnosc-funkcji&#41; dotyczącym wyliczania przekątnej prostokąta.</p>
+<ol start="3">
+<li><p>Stwórz nowy plik skryptu R nazywający się <code>01_zadania-funkcje.jl</code>.</p>
+</li>
+</ol>
+<p>W tym pliku, stwórz nowy obiekt <code>poznan</code>, który przyjmuje wartość <code>8.4</code>, napisz przeliczenie wartości tego obiektu ze stopni Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik. Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.</p>
+<ol start="4">
+<li><p>Stwórz nową funkcję, która służy do przeliczania wartości ze stopni Celsjusza na stopnie Fahrenheita.</p>
+</li>
+</ol>
+<p>Jak nazwiesz taką funkcję?</p>
+<ol start="5">
+<li><p>Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.</p>
+</li>
+</ol>
+<p>Jak nazwiesz taką funkcję?</p>
+<ol start="6">
+<li><p>Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na kilometry na godzinę.</p>
+</li>
+</ol>
+<p>Jak nazwiesz taką funkcję?</p>
+<ol start="7">
+<li><p>Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na mile lądowe na godzinę.</p>
+</li>
+</ol>
+<p>Jak nazwiesz taką funkcję?</p>
+<ol start="8">
+<li><p>Stwórz nową funkcję, która służy do wyliczania pola trapezu na podstawie długości podstaw oraz wysokości trapezu.</p>
+</li>
+</ol>
+<p>Jak nazwiesz taką funkcję?</p>
+<ol start="9">
+<li><p>Wykonaj poniższy kod. </p>
+</li>
+</ol>
+<p>Co oznacza uzyskany wynik?</p>
+
+
+<pre class='hljl'>
+<span class='hljl-nf'>mean</span><span class='hljl-p'>()</span>
+</pre>
+
+
+<ol start="10">
+<li><p>Wykonaj poniższy kod. </p>
+</li>
+</ol>
+<p>Co oznacza uzyskany wynik?</p>
+
+
+<pre class='hljl'>
+<span class='hljl-nf'>mean</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;abecadło&quot;</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<ol start="11">
+<li><p>Wykonaj poniższy kod. </p>
+</li>
+</ol>
+<p>Co oznacza uzyskany wynik?</p>
+
+
+<pre class='hljl'>
+<span class='hljl-nf'>mean</span><span class='hljl-p'>(</span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>())</span>
+</pre>
+
+
+<ol start="12">
+<li><p>Wykonaj poniższy kod. </p>
+</li>
+</ol>
+<p>Co oznacza uzyskany wynik?</p>
+
+
+<pre class='hljl'>
+<span class='hljl-nf'>length</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;abecadło&quot;</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<ol start="13">
+<li><p>Wykonaj poniższy kod. </p>
+</li>
+</ol>
+<p>Co oznacza uzyskany wynik?</p>
+
+
+<pre class='hljl'>
+<span class='hljl-n'>u</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-t'>
+</span><span class='hljl-n'>z</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-n'>v</span><span class='hljl-t'>
+</span><span class='hljl-n'>v</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>7</span>
+</pre>
+
+
+
+        <HR/>
+        <div class="footer">
+          <p>
+            Published from <a href="03-funkcje.jmd">03-funkcje.jmd</a>
+            using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.6 on 2021-01-05.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BODY>
+
+</HTML>
